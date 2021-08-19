@@ -13,6 +13,7 @@ const NewsFeed = () => {
         .then((_data)=>{setData(_data.articles)})
         .catch((err)=>{console.log("error->",err)})
         .finally(()=>{console.log("finish")})
+        console.log("bugg fixed")
     }
 
 
