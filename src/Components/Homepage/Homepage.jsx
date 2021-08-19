@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form/Form";
+import UserForm from "./Form/Form";
 import Users from "./Users/Users";
 import Banner from "../Banner/Banner";
 
@@ -8,7 +8,7 @@ const Homepage = () => {
     <div>
       <Banner />
       <div className="homepage">
-        <Form />
+        <UserForm />
         <Users />
       </div>
     </div>
