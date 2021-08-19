@@ -8,8 +8,8 @@ const NewsFeed = () => {
     const[data,setData]=useState([]);
 
     useEffect(()=>{
-        fetch("https://newsapi.org/v2/everything?domains=wsj.com&apiKey="+process.env.REACT_APP_NEWSFEED_APIKEY)
-        .then((res)=>{return res.json()})
+         await fetch("https://newsapi.org/v2/everything?domains=wsj.com&apiKey="+process.env.REACT_APP_NEWSFEED_APIKEY)
+        .then((res)=>{return await res.json()})
         .then((_data)=>{setData(_data.articles)})
         .catch((err)=>{console.log("error->",err)})
         .finally(()=>{console.log("finish")})
