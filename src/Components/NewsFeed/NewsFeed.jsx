@@ -18,7 +18,7 @@ const NewsFeed = () => {
     
 
      useEffect(()=>{
-        //fetchNews();
+        fetchNews();
     },[])
 
 
