@@ -237,7 +237,7 @@ textarea,input{
 }
 .userscard{
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -358,6 +358,16 @@ transform: scale(1);
   .users{
     width: 100%;
     
+  }
+}
+
+@media (max-width:450px) {
+  .maindisplay{
+    display: flex;
+    flex-direction: column;
+  }
+  .deletebtnbx{
+    margin-top: 10px;
   }
 }
 
