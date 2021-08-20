@@ -27,10 +27,10 @@ const UserForm = ({createFirebaseUser}) => {
             "Please enter a valid gender as Male or Female"
             ),
             location: Yup.string()
-            .max(15, "enter valid location")
+            .max(15, "Enter your town or city as your location")
             .required("Enter Location"),
             describe: Yup.string()
-            .max(300, "Use less than 300 characters")
+            .max(15, "Use less than 15 characters")
             .required("Enter Location"),
         });
         

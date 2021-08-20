@@ -277,7 +277,7 @@ transform: scale(0);
 }
 .userscard:hover .hoverCard{
   opacity: 1;
-  width: 60%;
+  width: 50%;
 transform: scale(1);
 
 }
