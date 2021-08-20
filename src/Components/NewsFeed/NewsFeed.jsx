@@ -18,7 +18,7 @@ const NewsFeed = () => {
     
 
      useEffect(()=>{
-        fetchNews();
+        //fetchNews();
     },[])
 
 
@@ -31,7 +31,6 @@ const NewsFeed = () => {
                     <NewsFeedCard article={article}/>
                 ))
             }
-        
         
         </div>
     </div> );
