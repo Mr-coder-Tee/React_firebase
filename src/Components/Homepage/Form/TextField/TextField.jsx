@@ -1,20 +1,26 @@
-import React from 'react';
-import { ErrorMessage,useField } from 'formik';
+import React from "react";
+import { ErrorMessage, useField } from "formik";
 
+const TextField = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
 
-const TextField = ({label,...props}) => {
-    return ( 
-            <div className="col">
-                <div className="inputbx">
-                    <span className="text">{label}</span>
-                    <input className="input-size is-invalid" 
-                   {...props}
-                    autoComplete="off"
-                    required="required"
-                    />
-                </div>
-            </div>
-        );
-}
- // {...field}
+  return (
+    <div className="col">
+      <div className="inputbx">
+        <span className="text">{label}</span>
+        <input
+          className="input-size is-invalid"
+          {...field}
+          {...props}
+          autoComplete="off"
+          required="required"
+        />
+      </div>
+      <div className="div">
+      <ErrorMessage name={field.name} component="div" className="error" />
+      </div>
+    </div>
+  );
+};
+// {...field}
 export default TextField;

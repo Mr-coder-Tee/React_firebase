@@ -1,4 +1,4 @@
-import React from 'react';
+import firebase from "firebase";
 
 
 const firebaseConfig = {
@@ -15,4 +15,4 @@ const firebaseConfig = {
 //   firebase.analytics();
 
 
-export default Firebase;
+export default firebase;

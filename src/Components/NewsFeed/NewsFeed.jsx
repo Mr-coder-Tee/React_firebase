@@ -8,7 +8,7 @@ const NewsFeed = () => {
     const[data,setData]=useState([]);
 
     const fetchNews=async()=>{
-        await fetch("https://api.graphql.jobs/")
+        await fetch("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key="+process.env.REACT_APP_NEWSFEED_APIKEY)
         .then((res)=>{return  res.json()})
         .then((_data)=>{console.log("data",_data)})
         .catch((err)=>{console.log("error->",err)})
