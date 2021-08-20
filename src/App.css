@@ -256,7 +256,6 @@ textarea,input{
 }
 .hoverCard{
   position: absolute;
-  width: 0%;
   border: 1px solid rgba(255, 255, 255, .3);
  background: rgba(255, 255, 255, 0.1);
 transform: scale(0);
@@ -278,7 +277,7 @@ transform: scale(0);
 }
 .userscard:hover .hoverCard{
   opacity: 1;
-  width: 50%;
+  width: 60%;
 transform: scale(1);
 
 }
@@ -368,6 +367,9 @@ transform: scale(1);
   }
   .deletebtnbx{
     margin-top: 10px;
+  }
+  .userscard:hover .hoverCard{
+    bottom: 60%;
   }
 }
 
