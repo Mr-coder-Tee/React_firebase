@@ -1,8 +1,20 @@
 import React from "react";
-import myUserCard from "./userscard/userscard";
+import { Link } from "react-router-dom";
+import Firebase from '../../Firebase/Firebase'
 
-const Users = ({ RegUsers }) => {
+
+
+
+const Users = ({ RegUsers,getUserId }) => {
+  const db = Firebase.firestore();
+
   const isEmpty = RegUsers.length;
+
+  const deleteUser=(_id)=>{
+    db.collection('users').doc(_id).delete()
+    .then(()=>{console.log("user deleted")})
+    .catch((err)=>{console.log(err)})
+  }
 
   return (
     <div className="users">
@@ -14,7 +26,7 @@ const Users = ({ RegUsers }) => {
       ) : (
         <div>
           {RegUsers.map((user) => (
-            <div className="userscard">
+            <div key={user.id} className="userscard" >
               <div className="hoverCard">
                 <p>
                   {
@@ -52,8 +64,8 @@ const Users = ({ RegUsers }) => {
                   <h3>{user.name + " " + user.surname}</h3>
                 </div>
                 <div className="deletebtnbx">
-                  <button className="design-danger deletebtn">Delete</button>
-                  <button className="design-primary updatebtn">Update</button>
+                  <button onClick={()=>deleteUser(user.id)} type="submit" className="design-danger deletebtn">Delete</button>
+                  <Link to="/update" onClick={()=>(getUserId(user.id))} className="design-primary updatebtn">Update</Link>
                 </div>
               </div>
             </div>
