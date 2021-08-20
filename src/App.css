@@ -249,9 +249,10 @@ textarea,input{
   justify-content: space-between;
   align-items: center;
 }
-.deletebtn{
+.deletebtn,.updatebtn{
   padding: 8px 20px;
   border-radius: 10px;
+  margin-left: 3px;
 }
 .hoverCard{
   position: absolute;

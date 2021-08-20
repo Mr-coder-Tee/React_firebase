@@ -53,6 +53,7 @@ const Users = ({ RegUsers }) => {
                 </div>
                 <div className="deletebtnbx">
                   <button className="design-danger deletebtn">Delete</button>
+                  <button className="design-primary updatebtn">Update</button>
                 </div>
               </div>
             </div>
