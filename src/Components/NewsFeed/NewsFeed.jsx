@@ -8,9 +8,9 @@ const NewsFeed = () => {
     const[data,setData]=useState([]);
 
     const fetchNews=async()=>{
-        await fetch("https://newsapi.org/v2/everything?domains=wsj.com&apiKey="+process.env.REACT_APP_NEWSFEED_APIKEY)
-        .then((res)=>{return res.json()})
-        .then((_data)=>{setData(_data.articles)})
+        await fetch("https://api.graphql.jobs/")
+        .then((res)=>{return  res.json()})
+        .then((_data)=>{console.log("data",_data)})
         .catch((err)=>{console.log("error->",err)})
         .finally(()=>{console.log("finish")})
         console.log("bugg fixed")
