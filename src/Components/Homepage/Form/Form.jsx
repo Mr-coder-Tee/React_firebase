@@ -17,7 +17,7 @@ const UserForm = ({createFirebaseUser}) => {
       e.preventDefault();
     };
     const validate = Yup.object({
-        name: Yup.string().required("enter valid name"),
+        name: Yup.string().required("enter valid name") ,
         surname: Yup.string().required("enter valid surname"),
         age: Yup.number().required("enter valid age"),
         gender: Yup.string()
@@ -30,7 +30,7 @@ const UserForm = ({createFirebaseUser}) => {
             .max(15, "Enter your town or city as your location")
             .required("Enter Location"),
             describe: Yup.string()
-            .max(15, "Use less than 15 characters")
+            .max(30, "Use less than 30 characters")
             .required("Enter Location"),
         });
         
