@@ -3,6 +3,8 @@ import Firebase from '../Firebase/Firebase'
 import { useParams } from 'react-router';
 import { useEffect,useState } from 'react';
 import profile from '../../images/userprofile.png'
+import background from '../../images/background.jpg'
+
 
 const Updateuserifo = () => {
     const db = Firebase.firestore();
@@ -24,7 +26,7 @@ const Updateuserifo = () => {
     <div className="Updateuserifo">
         <div className="userCard">
             <div className="mLablogo">
-                <h3><strong>mLab</strong> user</h3>
+                <h2><strong>m</strong>lab user</h2>
             </div>
             <div className="userdetails">
                 <div className="profilebx">
@@ -34,8 +36,11 @@ const Updateuserifo = () => {
                     <p>Names: <strong>{data.name+" "+data.surname}</strong></p>
                     <p>Age: <strong>{data.age}</strong></p>
                     <p>Location: <strong>{data.location}</strong></p>
-                    <p>Description: <strong>{data.describe}</strong></p>
+                    <p>Description: <strong>{data.description}</strong></p>
                 </div>
+            </div>
+            <div className="updateCard">
+
             </div>
         </div>
     </div> );
