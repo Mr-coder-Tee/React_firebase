@@ -8,18 +8,20 @@ const NewsFeed = ({getArticle}) => {
     const[data,setData]=useState([]);
 
     const fetchNews=async()=>{
-        await fetch("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=everything&api-key="+process.env.REACT_APP_NEWSFEED_APIKEY)
+        await fetch("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key="+process.env.REACT_APP_NEWSFEED_APIKEY)
         .then((res)=>{return  res.json()})
-        .then((_data)=>{setData(_data.response.docs)})
+        .then((_data)=>{setData(_data.results)})
         .catch((err)=>{console.log("error->",err)})
         .finally(()=>{console.log("finish")})
     }
-
+//setData(_data._data.results)
     
  
      useEffect(()=>{
         fetchNews();
     },[])
+
+
 
 
     return ( <div className="newsfeed">

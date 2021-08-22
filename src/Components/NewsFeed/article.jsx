@@ -5,20 +5,20 @@ import NewsFeedBanner from '../Banner/NewsfeedBanner';
 
 
 const Article = ({article}) => {
-    console.log("article=====",article)
+  console.log("article=====",article)
+
     return ( <div className="newsArticle">
         <NewsFeedBanner/>
         <div className="articleStructure">
+            <div className="imgbx">
+                <img src={article.multimedia[0].url} alt="" />
+            </div>
             <div className="headline">
-                <h1>{article.headline.main}</h1>
-                <h5>{"by "+article.byline.original}{" on "}{article.pub_date}</h5>
+                <h1>{article.title}</h1>
+                <h5>{"by "+article.byline}{" on "}{article.published_date}</h5>
             </div>
             <div className="intro">
                 <h4>{article.abstract}</h4>
-                <p>{article.lead_paragraph}</p>
-                <p>{article.snippet}</p>
-                <p>{article.print_section}</p>
-                <p>{article.web_url}</p>
             </div>
         </div>
     </div> );
