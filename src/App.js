@@ -10,6 +10,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const db = Firebase.firestore();
+
+  const [article,setArticle]=useState({})
+
+  const getArticle=(abstract)=>{
+    setArticle(abstract);
+  }
   
   const createFirebaseUser = (
     _name,
@@ -44,10 +50,10 @@ function App() {
             <Homepage createFirebaseUser={createFirebaseUser}/>
           </Route>
           <Route exact path="/newsfeed/:id">
-            <Article />
+            <Article article={article} />
           </Route>
           <Route exact path="/newsfeed">
-            <NewsFeed />
+            <NewsFeed getArticle={getArticle}/>
           </Route>
           <Route exact path="/update/:id">
             <Updateuserifo />
