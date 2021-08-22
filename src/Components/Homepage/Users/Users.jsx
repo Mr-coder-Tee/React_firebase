@@ -5,7 +5,7 @@ import Firebase from '../../Firebase/Firebase'
 
 
 
-const Users = ({ RegUsers,getUserId }) => {
+const Users = ({ RegUsers }) => {
   const db = Firebase.firestore();
 
   const isEmpty = RegUsers.length;
@@ -65,7 +65,7 @@ const Users = ({ RegUsers,getUserId }) => {
                 </div>
                 <div className="deletebtnbx">
                   <button onClick={()=>deleteUser(user.id)} type="submit" className="design-danger deletebtn">Delete</button>
-                  <Link to="/update" onClick={()=>(getUserId(user.id))} className="design-primary updatebtn">Update</Link>
+                  <Link to={"/update/"+user.id} className="design-primary updatebtn">Update</Link>
                 </div>
               </div>
             </div>

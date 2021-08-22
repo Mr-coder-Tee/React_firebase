@@ -5,7 +5,7 @@ import Banner from "../Banner/Banner";
 import firebase from "firebase";
 import Firebase from '../Firebase/Firebase'
 
-const Homepage = ({createFirebaseUser,getUserId}) => {
+const Homepage = ({createFirebaseUser}) => {
   const db = Firebase.firestore();
   const [RegUsers,setUsers]=useState([]);
 
@@ -25,7 +25,7 @@ const Homepage = ({createFirebaseUser,getUserId}) => {
       <Banner />
       <div className="homepage">
         <UserForm createFirebaseUser={createFirebaseUser} />
-        <Users RegUsers={RegUsers} getUserId={getUserId}/>
+        <Users RegUsers={RegUsers} />
       </div>
     </div>
   );
