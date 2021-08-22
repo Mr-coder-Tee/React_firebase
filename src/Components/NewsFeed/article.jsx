@@ -10,7 +10,7 @@ const Article = ({article}) => {
     return ( <div className="newsArticle">
         <NewsFeedBanner/>
         <div className="articleStructure">
-            <div className="imgbx">
+            <div className="Aimgbx">
                 <img src={article.multimedia[0].url} alt="" />
             </div>
             <div className="headline">
@@ -18,7 +18,7 @@ const Article = ({article}) => {
                 <h5>{"by "+article.byline}{" on "}{article.published_date}</h5>
             </div>
             <div className="intro">
-                <h4>{article.abstract}</h4>
+                <h4>{article.abstract+" Read more:"} <a href={article.url}>click here</a></h4>
             </div>
         </div>
     </div> );
