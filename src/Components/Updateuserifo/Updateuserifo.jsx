@@ -24,26 +24,23 @@ const Updateuserifo = () => {
         .then((res)=>{setdata({...res.data(),id:res.id})})
         .catch((err)=>{console.log(err)})
         .finally(()=>{console.log('finish')})
+
+
+        
     },[])
 
 
-    const [name, setname] = useState()
-    const getname=(e)=>
-{
-    setname(e.target.value)
-}
-    console.log("data name-----",data.name);
-    //   const updateUser=(e)=>{
-    //       db.collection.doc(uid).update({
-    //         name:name,
-    //         surname:surname,
-    //         age:age,
-    //         gender:gender,
-    //         location:location,
-    //         description:description
+      const updateUser=()=>{
+          db.collection.doc(uid).update({
+            name:"name",
+            surname:"surname",
+            age:12,
+            gender:"Female",
+            location:"location",
+            description:"description"
 
-    //       })
-    //   }
+          })
+      }
 
       const validate = Yup.object({
         name: Yup.string().required("enter valid name") ,
@@ -89,30 +86,29 @@ const Updateuserifo = () => {
         <Formik
           initialValues={{
               
-            name: data.name,
-            surname: data.surname,
-            age: data.age,
-            gender: data.gender,
-            location: data.location,
-            describe: data.description,
+            name: '',
+            surname: '',
+            age: '',
+            gender: '',
+            location: '',
+            describe: '',
           }}
+
+
           validationSchema={validate}
+
+
           onSubmit={(values) => {
-            console.log(values);
-            let _name
-            values.name===''?_name=data.name:_name=values.name;
-
-
-
-            db.collection.doc(uid).update({
-                name:_name,
+            db.collection('users').doc(uid).update({
+                name:values.name,
                 surname:values.surname,
                 age:values.age,
                 gender:values.gender,
                 location:values.location,
-                description:values.description
+                description:values.describe
     
-              })
+              }).then(()=>{console.log("user updated")})
+              .catch((err)=>{console.log(err)})
           }}
         >
           <Form>

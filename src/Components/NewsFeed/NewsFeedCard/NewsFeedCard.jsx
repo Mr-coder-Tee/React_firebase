@@ -16,6 +16,6 @@ const NewsFeedCard = ({article}) => {
             </div>
         </div>
      );
-}
+} 
  
 export default NewsFeedCard;

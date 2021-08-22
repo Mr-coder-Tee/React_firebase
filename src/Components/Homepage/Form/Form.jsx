@@ -53,7 +53,6 @@ const UserForm = ({createFirebaseUser}) => {
           }}
           validationSchema={validate}
           onSubmit={(values) => {
-            console.log(values);
             createFirebaseUser(
               values.name,
               values.surname,

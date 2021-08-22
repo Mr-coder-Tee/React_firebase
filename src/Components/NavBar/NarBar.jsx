@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return ( <div className="NavBar">
+                
                 <div className="homeLogo">
                     <Link to="/" className="btnBorder navBtn"><BiCodeAlt/>CodeTribe</Link>
                 </div>

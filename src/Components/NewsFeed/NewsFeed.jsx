@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import NewsFeedBanner from '../Banner/NewsfeedBanner';
 import NewsFeedCard from './NewsFeedCard/NewsFeedCard';
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,19 +17,21 @@ const NewsFeed = () => {
     }
 
     
-
+ 
      useEffect(()=>{
         fetchNews();
     },[])
 
-
+ console.log(data);
 
     return ( <div className="newsfeed">
         <NewsFeedBanner/>
         <div className="newsCardHolder">
             {
                 data.map((article)=>(
-                    <NewsFeedCard article={article}/>
+                    <Link key={article.id}>
+                        <NewsFeedCard article={article}/>
+                    </Link>
                 ))
             }
         

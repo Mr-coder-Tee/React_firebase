@@ -43,7 +43,7 @@ function App() {
           <Route exact path="/">
             <Homepage createFirebaseUser={createFirebaseUser}/>
           </Route>
-          <Route exact path="/newsfeed/article/:id">
+          <Route exact path="/newsfeed/:id">
             <Article />
           </Route>
           <Route exact path="/newsfeed">
