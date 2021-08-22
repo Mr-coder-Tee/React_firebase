@@ -13,7 +13,6 @@ const TextArea = ({ label, ...props }) => {
           {...field}
           {...props}
           autoComplete="off"
-          required="required"
         />
       </div>
       <div className="div">
