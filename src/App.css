@@ -115,6 +115,7 @@
 .homepage{
   width: 100%;
   min-height: 80vh;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -124,6 +125,33 @@
 background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+.homepage::after{
+  content: '';
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  background: #1E9600;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: App-logo-spin infinite 7s alternate;
+
+}
+.homepage::before{
+  content: '';
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  background: #fc00ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: App-logo-spin infinite 5s alternate;
 }
 
 /* ---------homepage-----------x */
@@ -235,6 +263,10 @@ textarea,input{
   backdrop-filter: blur(20px);
   z-index: 2;
 }
+
+
+
+
 .userscard{
   width: 100%;
   min-height: 50px;
@@ -483,5 +515,12 @@ transform: scale(1);
 }
 
 
-
+@keyframes App-logo-spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(30%);
+  }
+}
 
