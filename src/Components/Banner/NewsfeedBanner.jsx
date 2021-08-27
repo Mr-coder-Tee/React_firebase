@@ -4,7 +4,7 @@ import nyt from "../../images/NYTbanner.png";
 const NewsFeedBanner = () => {
   return (
     <div className="newsfeedbanner">
-      <img src={nyt} alt="" />
+      <h1>the new york times</h1>
     </div>
   );
 };
