@@ -27,7 +27,7 @@ const NewsFeed = ({getArticle}) => {
     return ( <div className="newsfeed">
         <NewsFeedBanner/>
         <div className="newsCardHolder">
-            {
+            { 
                 data.map((article)=>(
                     
                         <NewsFeedCard getArticle={getArticle} article={article}/>
